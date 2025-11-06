@@ -1,14 +1,11 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { useStore } from 'vuex';
+import store from '../../store'
 
 const showMobile = ref(false);
 
-// Obtener únicamente el objeto `device` desde el store
-const store: any = useStore();
-const devices = computed(() => store?.state?.device?.type ?? null);
+const devices = computed(() => (store as any)?.state?.device?.type ?? null);
 const isMobile = computed(() => devices.value === 'mobile');
-
 </script>
 
 <template>

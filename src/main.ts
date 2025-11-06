@@ -2,9 +2,11 @@ import { createApp } from 'vue'
 import './styles/main.scss'
 import App from './App.vue'
 import store from './store'
+import router from './router'
 
 const app = createApp(App)
 app.use(store)
+app.use(router)
 
 if (typeof window !== 'undefined') {
   let resizeTimeout: any = null
