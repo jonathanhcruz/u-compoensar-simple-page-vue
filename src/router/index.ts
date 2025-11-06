@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import { Main } from "../Pages";
-import NotFound from '../components/404/index.vue'
+import NotFound from '../Pages/404/index.vue'
 
 const routes: RouteRecordRaw[] = [
   {
