@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import HelloWorld from './components/hello-world/HelloWorld.vue'
+  import Menu from './components/menu';
+
+
 </script>
 
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <Menu />
 </template>
 
 <style lang="scss" src="./styles/main.scss" scoped />
