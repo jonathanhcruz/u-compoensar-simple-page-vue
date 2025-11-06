@@ -3,7 +3,7 @@
     <div class="not-found__container">
       <h1 class="not-found__title">404 - Página no encontrada</h1>
       <p class="not-found__message">Lo sentimos, la página que buscas no existe.</p>
-      <a href="/public" class="not-found__link">Volver al inicio</a>
+      <RouterLink to="/" class="not-found__link">Volver al inicio</RouterLink>
     </div>
   </section>
 </template>
