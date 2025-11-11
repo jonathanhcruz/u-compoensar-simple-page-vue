@@ -1,0 +1,70 @@
+.clients {
+  /* use transparent background so it blends with the page (not black) */
+  background: transparent;
+  color: #1f2a2f; /* dark text to match the page */
+  padding: 40px 16px;
+
+  .clients__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .clients__eyebrow {
+    margin: 0 0 8px 0;
+    color: #6b7b86; /* softer gray similar to hero */
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .clients__title {
+    margin: 0 0 20px 0;
+    color: #24313a; /* darker heading color */
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .clients__list {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .clients__item {
+    width: 100px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+
+    img {
+      max-width: 100%;
+      max-height: 44px;
+      display: block;
+      /* remove strong grayscale so logos keep their color on light bg */
+      filter: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .clients__item {
+      width: 72px;
+      height: 36px;
+      margin: 6px 8px;
+
+      img {
+        max-height: 36px;
+      }
+    }
+
+    .clients__title {
+      font-size: 14px;
+    }
+  }
+}
