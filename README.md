@@ -16,7 +16,7 @@ Quick summary
 
 ## Link to the explanatory video
 
-[https://www.youtube.com/embed/daYoLxa7Pik?si=rW_1FVJmKgZV-hCL](https://www.youtube.com/embed/daYoLxa7Pik?si=rW_1FVJmKgZV-hCL)
+[https://youtu.be/e6-Jw7F6tI0?si=Quufzxk4m5kU3wTY](https://youtu.be/e6-Jw7F6tI0?si=Quufzxk4m5kU3wTY)
 
 
 Project architecture and folder structure
