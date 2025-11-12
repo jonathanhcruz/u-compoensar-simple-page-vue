@@ -10,6 +10,13 @@ Quick summary
 - Routing: Vue Router
 - Styles: SCSS / Sass
 
+Referencias
+
+<img width="700" alt="Screenshot 2025-11-11 at 9 12 36 PM" src="https://github.com/user-attachments/assets/83cc6449-0aaa-460a-8a34-2f2e868139ed" />
+
+
+
+
 Project architecture and folder structure
 The main source code lives in the `src/` folder and is organized to separate responsibilities and make teamwork easier:
 
