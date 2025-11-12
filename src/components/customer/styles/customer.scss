@@ -68,27 +68,3 @@
   height: 28px;
 }
 .customer__badge svg { width: 100%; height: 100%; display: block; }
-
-.customer__link {
-  color: #10b981;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.customer__link .arrow {
-  font-weight: 600;
-  transform: translateX(0);
-  transition: transform .12s ease;
-}
-.customer__link:hover .arrow { transform: translateX(4px); }
-
-/* Responsive */
-@media (max-width: 860px) {
-  .customer__inner { flex-direction: column; align-items: center; text-align: center; }
-  .customer__media-bg { padding: 14px; }
-  .customer__image { width: 120px; height: 120px; }
-  .customer__content { width: 100%; }
-  .customer__description { max-width: 36rem; }
-}
