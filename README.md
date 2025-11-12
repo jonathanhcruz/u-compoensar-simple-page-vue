@@ -1,121 +1,117 @@
-# u-compensar — Página simple (Vue 3 + TypeScript + Vite)
+# u-compensar — Simple Page (Vue 3 + TypeScript + Vite)
 
-Proyecto sencillo de front-end desarrollado como trabajo para la universidad (Ucompensar). Este repositorio contiene una página estática/SPA construida con Vue 3, TypeScript y Vite, pensada como plantilla educativa y demostrativa.
+A simple front-end project created as coursework for Ucompensar University. This repository contains a small static SPA built with Vue 3, TypeScript and Vite intended as an educational/demo template.
 
-Resumen rápido
+Quick summary
 - Framework: Vue 3
-- Lenguaje: TypeScript
-- Bundler / Dev server: Vite
-- Estado: Vuex 4 (módulos)
-- Enrutamiento: vue-router
-- Estilos: SCSS / Sass
+- Language: TypeScript
+- Dev server / Bundler: Vite
+- State management: Vuex 4 (module-based)
+- Routing: Vue Router
+- Styles: SCSS / Sass
 
-Arquitectura y estructura de carpetas
-La estructura principal del proyecto (carpeta `src/`) está organizada para separar responsabilidades y facilitar el trabajo en equipo:
+Project architecture and folder structure
+The main source code lives in the `src/` folder and is organized to separate responsibilities and make teamwork easier:
 
 - `src/`
-  - `main.ts` — punto de entrada de la aplicación.
-  - `App.vue` — componente raíz.
-  - `router/` — configuración de rutas (Vue Router).
-  - `store/` — Vuex store con módulos (por ejemplo `store/modules/device`).
-  - `components/` — componentes reutilizables agrupados por dominio (ej. `hero`, `menu`, `clients`, `customer`, `footer`, `community`).
-  - `Pages/` — vistas o páginas (ej. `main`, `404`).
-  - `HOC/` — componentes de orden superior o wrappers reutilizables.
-  - `helpers/` y `utils/` — funciones auxiliares y utilidades (por ejemplo detección de dispositivo).
-  - `assets/` — imágenes, svg y otros recursos estáticos.
-  - `styles/` — estilos globales y variables SCSS (`base`, `_variables.scss`, `_mixins.scss`).
-  - `types/` — tipos TypeScript y definiciones (ej. `vuex.d.ts`, `shims-vuex.d.ts`).
+  - `main.ts` — application entry point.
+  - `App.vue` — root component.
+  - `router/` — route configuration (Vue Router).
+  - `store/` — Vuex store with modules (for example `store/modules/device`).
+  - `components/` — reusable components grouped by feature/domain (see details below).
+  - `Pages/` — top-level views/pages (e.g. `main`, `404`).
+  - `HOC/` — higher-order components or reusable wrappers.
+  - `helpers/` and `utils/` — utility functions (for example device detection).
+  - `assets/` — images, SVGs and other static assets.
+  - `styles/` — global styles and SCSS variables (`base`, `_variables.scss`, `_mixins.scss`).
+  - `types/` — TypeScript types and declarations (e.g. `vuex.d.ts`, `shims-vuex.d.ts`).
 
-Patrones y convenciones notables
-- Vue 3 con Composition API / `<script setup>` (plantilla del proyecto).
-- Tipado fuerte con TypeScript y definiciones en `src/types`.
-- State centralizado con Vuex 4 en módulos con `namespaced: true`.
-- SCSS para estilos; variables y mixins globales en `src/styles/base`.
-- Archivos y carpetas organizadas por dominio (feature folders) para facilitar escalado.
+Conventions and patterns
+- Vue 3 with Composition API and `<script setup>` in single-file components.
+- Strong typing with TypeScript and project type declarations placed in `src/types`.
+- Centralized state with Vuex 4 using modular (namespaced) modules.
+- SCSS for styling with global variables and mixins under `src/styles`.
+- Feature-folder organization: components and their styles/resources live together in subfolders.
 
-Arquitectura de la carpeta `components/`
-La carpeta `src/components/` agrupa componentes reutilizables por funcionalidad. A continuación se describe la arquitectura interna encontrada en este proyecto:
+components/ folder architecture
+The `src/components/` folder groups feature-based, reusable components. The structure in this project is:
 
-- `components/` — carpeta raíz de componentes reutilizables.
+- `components/` — root folder for components
   - `clients/`
-    - `Clients.vue` — componente que muestra la sección o tarjeta de clientes.
-    - `styles/Clients.scss` — estilos específicos del componente `Clients`.
+    - `Clients.vue` — component for the clients section or cards.
+    - `styles/Clients.scss` — component-specific styles.
   - `community/`
-    - `community.vue` — componente de la sección "comunidad" (texto, enlaces o llamadas a la acción).
-    - `styles/community.scss` — estilos específicos de la sección comunidad.
+    - `community.vue` — community section component.
+    - `styles/community.scss` — styles for the community component.
   - `customer/`
-    - `Customer.vue` — componente relacionado con el usuario/cliente.
-    - `styles/customer.scss` — estilos para el componente `Customer`.
+    - `Customer.vue` — customer/user related component.
+    - `styles/customer.scss` — component styles.
   - `footer/`
-    - `FooterRouter.vue` — componente del pie de página y navegaciones relacionadas.
-    - `styles/footer.scss` — estilos del footer.
+    - `FooterRouter.vue` — footer component with navigation.
+    - `styles/footer.scss` — footer styles.
   - `hero/`
-    - `HeroSection.vue` — componente del área hero (banner principal).
-    - `styles/hero.scss` — estilos del hero.
+    - `HeroSection.vue` — hero/banner component.
+    - `styles/hero.scss` — hero styles.
   - `menu/`
-    - `menu.vue` — componente del menú o navegación principal.
-    - `index.ts` — archivo de exportación/ayuda para el menú (posible centralizador de props o utilidades de export).
-    - `styles/menu.scss` — estilos del menú.
+    - `menu.vue` — main navigation/menu component.
+    - `index.ts` — optional re-export or helper for the menu.
+    - `styles/menu.scss` — menu styles.
 
-Convenciones observadas
-- Nombres de componentes en PascalCase (`Clients.vue`, `HeroSection.vue`) o kebab/camel según el autor; mantener consistencia en futuras contribuciones.
-- Cada componente tiene su carpeta de `styles/` con un archivo `.scss` asociado.
-- Agrupación por dominio: cada carpeta dentro de `components/` agrupa el componente principal y sus estilos/recursos relacionados.
-- Si aparece `index.ts` en una carpeta (como en `menu/`), suele usarse para reexportar el componente o exponer utilidades relacionadas.
+Observed conventions
+- Component filenames use PascalCase (e.g. `Clients.vue`, `HeroSection.vue`) while some files use lowercase — prefer settling on a single convention for future contributions.
+- Each component keeps its SCSS in a `styles/` subfolder next to the component file.
+- `index.ts` files (where present) are used to re-export components or expose helper functions.
 
-Ejemplo de uso / flujo típico
-1. Un `Page` (en `src/Pages/`) importa el componente desde `src/components/<feature>/Component.vue`.
-2. El componente aplica sus estilos importando el archivo SCSS local o usando estilos scoped en el propio SFC.
-3. Si es necesario, el componente se conecta al `store/` (Vuex) o usa helpers desde `helpers/` o `utils/`.
+Typical usage flow
+1. A page from `src/Pages/` imports components from `src/components/<feature>/Component.vue`.
+2. Components import their SCSS or use scoped styles inside the SFC.
+3. Components consume shared state from `store/` or utilities from `helpers/` and `utils/` if needed.
 
-Tecnologías (extraídas del `package.json`)
+Technologies (from `package.json`)
 - vue ^3
 - typescript ~5.x
 - vite ^6.x
 - @vitejs/plugin-vue
 - vuex ^4
 - vue-router ^4
-- sass (para compilación de SCSS)
-- vue-tsc (type checking)
+- sass (for SCSS compilation)
+- vue-tsc (TypeScript checking)
 
-Scripts útiles
-- Instalar dependencias
+Useful scripts
+- Install dependencies
 
 ```bash
 npm install
 ```
 
-- Levantar servidor de desarrollo
+- Start development server
 
 ```bash
 npm run dev
 ```
 
-- Compilar para producción
+- Build for production
 
 ```bash
 npm run build
 ```
 
-- Previsualizar la build localmente
+- Preview production build locally
 
 ```bash
 npm run preview
 ```
 
-Notas para desarrollo y entrega (Ucompensar)
-- Tipo de entrega recomendado: incluir el repositorio con instrucciones claras y un build (`npm run build`).
-- Asegúrate de que el archivo `package.json` incluya versiones estables y que `README.md` contenga pasos para ejecutar localmente.
-- Para documentación adicional o despliegue, puedes añadir un `netlify.toml` o configuración de GitHub Pages/Vercel dependiendo del host.
+Notes for development and delivery (Ucompensar)
+- Recommended delivery: include the repository with clear instructions and a build (`npm run build`).
+- Make sure `package.json` uses stable versions and the README contains the steps to run locally.
+- For deployment, consider adding a host-specific config (`netlify.toml`, Vercel settings, or GitHub Pages instructions).
 
-Sugerencias de próximas mejoras (opcionales)
-- Migrar a Pinia si se busca una alternativa moderna a Vuex.
-- Añadir tests unitarios (Jest / Vitest) y pruebas E2E (Cypress) para demostrar calidad.
-- Añadir CI (GitHub Actions) para lint, typecheck y build automáticos.
+Suggested improvements (optional)
+- Migrate to Pinia for a modern alternative to Vuex if desired.
+- Add unit tests (Vitest/Jest) and E2E tests (Cypress) to demonstrate code quality.
+- Add CI (GitHub Actions) to run lint/typecheck and build on push/PR.
 
-Contacto / autor
-- Proyecto realizado para la universidad Ucompensar.
-- Mantener README actualizado con instrucciones de ejecución y datos del autor si se requiere entregar al profesor.
-
-
-Fin del documento.
+Author / contact
+- Project created for Ucompensar University coursework.
+- Keep this README updated with author and submission details when delivering to the instructor.
