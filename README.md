@@ -10,11 +10,13 @@ Quick summary
 - Routing: Vue Router
 - Styles: SCSS / Sass
 
-Referencias
+## References
 
 <img width="700" alt="Screenshot 2025-11-11 at 9 12 36 PM" src="https://github.com/user-attachments/assets/83cc6449-0aaa-460a-8a34-2f2e868139ed" />
 
+## Link to the explanatory video
 
+[https://www.youtube.com/embed/daYoLxa7Pik?si=rW_1FVJmKgZV-hCL](https://www.youtube.com/embed/daYoLxa7Pik?si=rW_1FVJmKgZV-hCL)
 
 
 Project architecture and folder structure
